@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .exercise-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .exercise-card h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .exercise-card img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .hashtag {
+            color: #1DA1F2;
+            font-weight: bold;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>All Exercises</h1>
+        
+        {% if exercises %}
+            {% for exercise in exercises %}
+            <div class="exercise-card">
+                <h3>{{ exercise[1] }}</h3>
+                <p><strong>Description:</strong> {{ exercise[2] }}</p>
+                {% if exercise[3] %}
+                <img src="{{ url_for('static', filename='uploads/' + exercise[3].split('\\')[-1].split('/')[-1]) }}" alt="{{ exercise[1] }}">
+                {% endif %}
+                {% if exercise[4] %}
+                <p class="hashtag">{{ exercise[4] }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center;">No exercises found. Add one to get started!</p>
+        {% endif %}
+        
+        <div class="back-link">
+            <a href="/">← Add New Exercise</a>
+        </div>
+    </div>
+</body>
+</html>
