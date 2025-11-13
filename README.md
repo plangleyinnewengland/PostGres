@@ -1,4 +1,10 @@
-# SQL
+# Python
+Run the excercise DB
+cd C:\Users\plangley.PROGRESS\Desktop
+python exercise_app.py
+http://localhost:5000
+
+## SQL
 
 ## All databases
 ```
