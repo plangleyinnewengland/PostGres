@@ -1,8 +1,8 @@
 # Python
-Run the excercise DB
-cd C:\Users\plangley.PROGRESS\Desktop
-python exercise_app.py
-http://localhost:5000
+## Run the excercise DB
+1. `cd C:\Users\plangley.PROGRESS\Desktop`
+2. `python exercise_app.py`
+3. Open a browser and go to [http://localhost:5000](http://localhost:5000)
 
 ## SQL
 
